@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            A simplified statistic portal about population in Norway.
+        </title>
+        <style>
+            h1 {
+                font-size: 2.5em
+            }
+            label {
+                font-size: 1.5em
+            }
+            button {
+                min-width: 72px;
+                min-height: 36px;
+                border: 1px solid grey;           
+            }
+            select {
+                width: 200px;
+                height: 26px;
+                border: 1px solid grey;           
+            }
+            label, button {
+                display: block;
+            }
+            button {
+                margin-top: 1em;
+            }     
+            table {
+                border-collapse: collapse;
+                width: 100%;
+            }
+            th, td {
+                border: 1px solid #dddddd;
+                text-align: left;
+                padding: 8px;
+            }
+            th {
+                background-color: #f2f2f2;
+            }   
+        </style>
+    </head>
+    <body>
+        <h1>Statistikk om befolkning i Rauma kommune fra 2021 til 2023</h1>
+        <form id="dataForm">
+          <label for="statisticVariable">Statistikkvariabel</label>
+          <select id="variabeldropdown">
+             <!-- Options will be dynamically added here -->
+          </select>
+          <!--<label for="locations">Kommune</label>-->
+          <!--<select id="kommunedropdown">-->
+            <!-- Options will be dynamically added here -->
+          <!--</select>-->
+        </form>
+        <button id="start" onclick="submitForm()">Start</button>
+
+        <!-- Script to populate the dropdowns -->
+        <script>
+            // Define options for the variabel dropdown list
+            const variabeloptions = ['Befolkning', 'Innbyggere pr km2 landareal'];
+        
+            // Get a reference to the select element
+            const selectElementvariabel = document.getElementById('variabeldropdown');
+        
+            // Populate the variabel dropdown list with options
+            variabeloptions.forEach(option => {
+            const optionElement = document.createElement('option');
+            optionElement.textContent = option;
+            selectElementvariabel.appendChild(optionElement);
+            });
+            // Define options for the kommune dropdown list
+            //const kommuneoptions = ['Rauma', 'Molde', 'Oslo'];
+        
+            // Get a reference to the select element
+            //const selectElementkommune = document.getElementById('kommunedropdown');
+        
+            // Populate the kommune dropdown list with options
+            //kommuneoptions.forEach(option => {
+            //const optionElement = document.createElement('option');
+            //optionElement.textContent = option;
+            //selectElementkommune.appendChild(optionElement);
+            //});
+        </script> 
+
+         <!-- Table to display results -->
+        <h1>Results</h1>
+        <table id="resultsTable">
+            <thead>
+              <tr>
+                  <th>Statistic</th>
+                  <th>Value</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>  
+        </table>
+        <script src="get_started.js"></script>
+    </body>
+</html>
