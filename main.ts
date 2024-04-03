@@ -41,13 +41,14 @@ function calculateMedian(values:any) {
 
 // ---------- RESTful endpoint operations begin. ----------
 
-// Route to handle incoming form submission from user to our server, and use of axios
-//to make a request from our server to SSB API
+// Route to handle incoming form submission from user to our server, 
+//and use of axios to make a request from our server to SSB API
 app.post('/submit-form', async (req,res) => {
   try {
       //Extract user input from request body/form
       const { statisticVariable } = req.body;
-        
+      console.log('Received variable from client:', statisticVariable);  
+      
       // Construct the API request URL based on user input
       const apiEndpoint = 'https://data.ssb.no/api/v0/no/table/11342';
       // Define the query parameters
